@@ -1,0 +1,205 @@
+/* Swiper Styles */
+.testimonial-swiper {
+  padding: 30px 0;
+}
+
+/* Hide default Swiper navigation arrows */
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+  display: none;
+}
+
+/* Custom pagination */
+.testimonial-pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.testimonial-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: #DDE0E4;
+  opacity: 1;
+  margin: 0 5px;
+}
+
+.testimonial-pagination .swiper-pagination-bullet-active {
+  background: #F53838;
+}
+
+/* Testimonial card styles */
+.testimonial-card {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  min-height: 230px;
+}
+
+/* Active slide styling */
+.swiper-slide-active .testimonial-card {
+  border: 2px solid #F53838;
+}
+
+/* Make sure all testimonial cards have the same height */
+.swiper-slide {
+  height: auto;
+  padding: 5px;
+}
+
+/* Custom navigation buttons */
+.testimonial-prev,
+.testimonial-next {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-prev:hover {
+  border-color: #F53838;
+}
+
+/* Header Styles */
+header.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+header.shadow-md:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.mobile-menu-enter-active {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.mobile-menu-exit {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.mobile-menu-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+/* Mobile menu styles */
+.mobile-menu-link {
+  position: relative;
+  transition: all 0.3s ease;
+  color: #4F5665 !important;
+}
+
+.mobile-menu-link svg,
+.mobile-menu-link div svg {
+  color: #F53838 !important;
+}
+
+.mobile-menu-link:hover {
+  color: #F53838 !important;
+}
+
+/* Remove any default active states */
+.mobile-menu-link,
+.mobile-menu-link div,
+.mobile-menu-link svg {
+  outline: none !important;
+}
+
+/* Reset any focus or active states */
+.mobile-menu-link:focus,
+.mobile-menu-link:active,
+.mobile-menu-link:focus-within {
+  color: #4F5665 !important;
+}
+
+/* Remove underline animation */
+.mobile-menu-link::after {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-swiper {
+    padding: 20px 0 30px;
+  }
+  
+  .testimonial-card {
+    min-height: 200px;
+  }
+  
+  /* Mobile menu backdrop */
+  .mobile-menu-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-menu-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Dark Mode Styles */
+.dark body {
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+.dark .testimonial-card {
+  background-color: #1E1E1E;
+  border-color: #2E2E2E;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dark .swiper-slide-active .testimonial-card {
+  border-color: #F53838;
+}
+
+.dark .swiper-pagination-bullet {
+  background: #444;
+}
+
+.dark .swiper-pagination-bullet-active {
+  background: #F53838;
+}
+
+.dark .mobile-menu-link {
+  color: #E0E0E0 !important;
+}
+
+.dark .mobile-menu-link:hover {
+  color: #F53838 !important;
+}
+
+.dark .mobile-menu-link:focus,
+.dark .mobile-menu-link:active,
+.dark .mobile-menu-link:focus-within {
+  color: #E0E0E0 !important;
+}
+
+/* Smooth transitions for dark mode toggle */
+body, 
+.testimonial-card,
+.mobile-menu-link,
+header,
+button,
+a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
